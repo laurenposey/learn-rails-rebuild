@@ -16,4 +16,5 @@
 </p>
 
 <%= link_to 'Edit', edit_week_lesson_path(@lesson) %> |
+<%= link_to 'Delete', week_lesson_path(@lesson),:data => {:confirm => "You sure?", :method => 'delete'} %> |
 <%= link_to 'Back', week_path %>

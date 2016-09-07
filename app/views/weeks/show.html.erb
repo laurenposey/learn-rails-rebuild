@@ -1,4 +1,12 @@
-<%= flash[:notice] %>
+<% content_for(:navbar) do %>
+  <ul>
+    <li><a href="/courses">Home</a></li>
+    <% unless @week.id == Week.first.id %>
+      <li> <%= link_to 'Previous', @week.previous  %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <h1><%= @week.title %> Page</h1>
 
 

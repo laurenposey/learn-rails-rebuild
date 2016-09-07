@@ -1,6 +1,11 @@
 <%= flash[:notice] %>
 <%= flash[:alert] %>
 
+<% content_for(:navbar) do %>
+  <ul>
+    <li><a href="/courses">Home</a></li>
+  </ul>
+<% end %>
 <h1>Courses Page</h1>
 <hr>
 <ul>

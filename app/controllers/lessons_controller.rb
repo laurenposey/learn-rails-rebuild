@@ -37,10 +37,11 @@ class LessonsController < ApplicationController
     else
       flash[:alert] = "fail to update"
       render :edit
-    end 
+    end
   end
 
   def destroy
+    @lesson = Lesson.find(params[:id])
     @week = @lesson.week
     if @lesson.destroy
       flash[:notice] = 'Lesson was successfully destroyed.'

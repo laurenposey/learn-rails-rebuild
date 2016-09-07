@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <%= flash[:alert] %>
+  <%= flash[:notice] %>
+  <%= yield :navbar %>
     <%= yield %>
   </body>
 </html>
