@@ -1,0 +1,9 @@
+
+<%= form_for [@course, @week] do |f| %>
+<div class="field">
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</div>
+<br>
+<%= f.submit %>
+<% end %>

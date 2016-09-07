@@ -1,6 +1,15 @@
 
 <%= form_for(@course) do |f| %>
+<div class="field">
+  <%= f.label :title %>
   <%= f.text_field :title %>
+</div>
+<div class="">
+  <%= f.label :teacher %>
   <%= f.text_field :teacher %>
+</div>
+<br>
+<div class="actions">
   <%= f.submit %>
+</div>
 <% end %>

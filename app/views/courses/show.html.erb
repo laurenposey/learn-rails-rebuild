@@ -1,3 +1,11 @@
 <h1><%= @course.title %> Page</h1>
 
-<%= link_to "Edit", edit_course_path(@course) %> | <%= link_to "Delete", course_path(@course), :data => {:confirm => "You Sure?", :method => 'delete'} %>
+<ol>
+  <% @weeks.each do |week| %>
+  <li><%= week.title %></li>
+  <% end %>
+</ol>
+
+<%= link_to "Edit", edit_course_path(@course) %> | <%= link_to "Delete", course_path(@course), :data => {:confirm => "You Sure?", :method => 'delete'} %> | <%= link_to "Add a Week", new_course_week_path(@course) %>
+<hr>
+<%= link_to "Back to Homepage", courses_path %>

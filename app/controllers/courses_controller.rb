@@ -4,6 +4,7 @@ class CoursesController < ApplicationController
     @courses = Course.all
   end
   def show
+    @weeks = @course.weeks
   end
   def create
     @course = Course.new(course_params)
@@ -32,6 +33,7 @@ class CoursesController < ApplicationController
 
   def destroy
     if @course.destroy
+      @course.weeks.each { |week| week.destroy }
       flash[:notice] = "Course Deleted"
       redirect_to courses_path
     else
