@@ -1,0 +1,12 @@
+<%= flash[:notice] %>
+<%= flash[:alert] %>
+
+<h1>Courses Page</h1>
+<hr>
+<ul>
+  <% @courses.each do |course| %>
+    <li><%= course.title %> taught by <%= course.teacher %> | <%= link_to "Course Page", course_path(course) %></li>
+  <% end %>
+</ul>
+<hr>
+<%= link_to "Add a Course", new_course_path %>
