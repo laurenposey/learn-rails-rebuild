@@ -2,7 +2,7 @@
 
 <ol>
   <% @weeks.each do |week| %>
-  <li><%= week.title %></li>
+  <li><%= week.title %> | <%= link_to "View Week", course_week_path(@course, week) %></li>
   <% end %>
 </ol>
 

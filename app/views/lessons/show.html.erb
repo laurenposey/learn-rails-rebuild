@@ -12,8 +12,8 @@
 
 <p>
   <strong>Week:</strong>
-  <%= @lesson.week_id %>
+  <%= @lesson.week.title%>
 </p>
 
-<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
-<%= link_to 'Back', lessons_path %>
+<%= link_to 'Edit', edit_week_lesson_path(@lesson) %> |
+<%= link_to 'Back', week_path %>

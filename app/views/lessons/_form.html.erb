@@ -1,15 +1,4 @@
-<%= form_for(lesson) do |f| %>
-  <% if lesson.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
-
-      <ul>
-      <% lesson.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for [@week, @lesson] do |f| %>
 
   <div class="field">
     <%= f.label :title %>
@@ -19,11 +8,6 @@
   <div class="field">
     <%= f.label :content %>
     <%= f.text_area :content %>
-  </div>
-
-  <div class="field">
-    <%= f.label :week_id %>
-    <%= f.number_field :week_id %>
   </div>
 
   <div class="actions">

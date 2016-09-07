@@ -1,9 +1,10 @@
 class WeeksController < ApplicationController
-  before_action :set_week, only: [:show, :edit, :update, :destroy]
   def index
     @weeks = Week.all
   end
   def show
+    @week = Week.find(params[:id])
+    @course = @week.course
   end
   def create
     @course = Course.find(params[:course_id])
@@ -36,8 +37,8 @@ class WeeksController < ApplicationController
     end
   end
   def destroy
-    @week = Week.find(params[:id])
-    @course = Course.find(params[:course_id])
+    @course = @week.course
+    @week.lessons.each { |lesson| lesson.destroy }
     if @week.destroy
       flash[:notice] = "Week Deleted"
       redirect_to course_path(@course)

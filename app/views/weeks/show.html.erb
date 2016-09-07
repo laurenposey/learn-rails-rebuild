@@ -1,5 +1,14 @@
+<%= flash[:notice] %>
 <h1><%= @week.title %> Page</h1>
 
-<%= link_to "Edit", edit_course_week_path(@week) %> | <%= link_to "Delete", week_path(@week), :data => {:confirm => "You Sure?", :method => 'delete'} %>
+
+<ul>
+  <% @week.lessons.each do |lesson| %>
+  <li><%= lesson.title %> | <%= link_to "View Lesson", week_lesson_path(@week, lesson) %></li>
+  <% end %>
+</ul>
+
+
+<%= link_to "Edit", edit_course_week_path(@course, @week) %> | <%= link_to "Delete", week_path(@week), :data => {:confirm => "You Sure?", :method => 'delete'} %> | <%= link_to "Add a Lesson", new_week_lesson_path(@week) %>
 <hr>
 <%= link_to "Back to Course Page", course_path(@course) %>

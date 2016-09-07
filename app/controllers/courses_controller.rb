@@ -32,8 +32,8 @@ class CoursesController < ApplicationController
   end
 
   def destroy
+    @course.weeks.each { |week| week.destroy }
     if @course.destroy
-      @course.weeks.each { |week| week.destroy }
       flash[:notice] = "Course Deleted"
       redirect_to courses_path
     else
