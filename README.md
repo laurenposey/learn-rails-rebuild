@@ -18,7 +18,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 _First:_
-* `git clone https://github.com/laurenposey/scifi-the-femme-side-rails.git` this repository
+* `git clone https://github.com/laurenposey/learn-rails-rebuild.git` this repository
 * change into the new directory
 
 _Then:_
